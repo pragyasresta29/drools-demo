@@ -1,0 +1,17 @@
+template header
+id
+min_age
+max_age
+status
+
+package com.poc;
+dialect  "mvel"
+
+template "Set Status of Person based on age"
+rule "ageRule_@{row.rowNumber}"
+    when
+        $person : Person(age>=@{min_age} && age<@{max_age})
+    then
+        $person.status=":" + "@{status}";
+end
+end template
