@@ -39,7 +39,6 @@ public class DroolsService {
     @SneakyThrows
     public String convertTemplateToRules(ResultSet rs){
         ResultSetGenerator converter = new ResultSetGenerator();
-        DroolsService ks = new DroolsService();
         return converter.compile(rs, getRulesStream());
     }
 
