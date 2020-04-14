@@ -1,4 +1,4 @@
-package com.poc;
+package com.poc.rulestemplate;
 
 import lombok.Data;
 

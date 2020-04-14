@@ -1,0 +1,32 @@
+package com.poc.salienceexample;
+
+import com.poc.salienceexample.Employee
+import com.poc.salienceexample.Department
+
+rule "Not IT" salience 10
+lock-on-active
+   when
+      $emp: Employee("IT" != dept.getName());
+   then
+   System.out.println("filter Dept ::" + $emp.getName());
+   $emp.setFilter(true);
+   update($emp);
+end
+
+rule "Not Manager" salience 5
+lock-on-active
+   when
+      $emp: Employee(manager==false);
+   then
+   System.out.println("filter Manager ::" + $emp.getName());
+   $emp.setFilter(true);
+   update($emp);
+end
+
+rule "give Manager Laptop"
+   when
+      $emp: Employee(filter==false);
+   then
+   $emp.setMessage("Give Laptop");
+   System.out.println($emp.getName()+ ": "+$emp.getDept().getName()+ ":"+$emp.getMessage());
+end

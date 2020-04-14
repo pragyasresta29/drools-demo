@@ -4,14 +4,13 @@ min_age
 max_age
 status
 
-package com.poc;
-dialect  "mvel"
+package com.poc.rulestemplate;
 
 template "Set Status of Person based on age"
 rule "ageRule_@{row.rowNumber}"
     when
         $person : Person(age>=@{min_age} && age<@{max_age})
     then
-        $person.status=":" + "@{status}";
+        $person.setStatus("@{status}");
 end
 end template
