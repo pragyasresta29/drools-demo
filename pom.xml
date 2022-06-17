@@ -10,7 +10,7 @@
 
 
     <properties>
-        <runtime.version>7.15.0.Final</runtime.version>
+        <runtime.version>7.60.0.Final</runtime.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
